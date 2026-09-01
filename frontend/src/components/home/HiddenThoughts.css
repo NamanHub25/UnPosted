@@ -1,0 +1,271 @@
+.hidden-thoughts {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+
+  padding: 160px 0 180px;
+}
+
+.hidden-heading {
+  max-width: 650px;
+}
+
+.hidden-heading h2 {
+  margin-top: 20px;
+
+  font-family: var(--font-display);
+
+  font-size: clamp(3rem, 5vw, 5rem);
+
+  line-height: 0.98;
+
+  letter-spacing: -0.06em;
+
+  font-weight: 500;
+}
+
+.hidden-heading h2 em {
+  color: #655ca0;
+  font-style: italic;
+}
+
+.hidden-heading p {
+  max-width: 430px;
+
+  margin-top: 25px;
+
+  font-size: 0.95rem;
+
+  line-height: 1.8;
+
+  opacity: 0.62;
+}
+
+/* CANVAS */
+
+.thoughts-canvas {
+  height: 650px;
+
+  margin-top: 90px;
+
+  position: relative;
+
+  border-top: 1px solid rgba(41, 37, 31, 0.1);
+  border-bottom: 1px solid rgba(41, 37, 31, 0.1);
+}
+
+.canvas-center {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  width: 190px;
+  height: 190px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  border-radius: 50%;
+
+  background: #655ca0;
+
+  color: #f4ebdd;
+
+  text-align: center;
+
+  box-shadow:
+    10px 12px 0 rgba(41, 37, 31, 0.08);
+}
+
+.canvas-center svg {
+  opacity: 0.65;
+}
+
+.canvas-center span {
+  font-family: var(--font-mono);
+
+  font-size: 0.52rem;
+
+  letter-spacing: 0.12em;
+
+  opacity: 0.5;
+}
+
+.canvas-center strong {
+  font-family: var(--font-display);
+
+  font-size: 1.45rem;
+
+  line-height: 0.95;
+
+  font-weight: 500;
+}
+
+/* THOUGHT CARDS */
+
+.thought-card {
+  position: absolute;
+
+  width: 245px;
+
+  padding: 22px 23px 20px;
+
+  border: 1px solid rgba(41, 37, 31, 0.1);
+
+  box-shadow:
+    5px 7px 0 rgba(41, 37, 31, 0.07);
+
+  transition:
+    transform 250ms ease,
+    box-shadow 250ms ease;
+}
+
+.thought-card:hover {
+  transform: translateY(-8px) rotate(0deg);
+
+  box-shadow:
+    9px 12px 0 rgba(41, 37, 31, 0.1);
+}
+
+.thought-card > span {
+  font-family: var(--font-mono);
+
+  font-size: 0.54rem;
+
+  opacity: 0.45;
+}
+
+.thought-card p {
+  margin-top: 15px;
+
+  font-family: var(--font-display);
+
+  font-size: 1.15rem;
+
+  line-height: 1.35;
+
+  letter-spacing: -0.025em;
+}
+
+.thought-card button {
+  width: 30px;
+  height: 30px;
+
+  margin-top: 18px;
+
+  display: grid;
+  place-items: center;
+
+  background: rgba(41, 37, 31, 0.08);
+
+  border-radius: 50%;
+
+  opacity: 0.55;
+
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease;
+}
+
+.thought-card button:hover {
+  opacity: 1;
+
+  transform: translate(2px, -2px);
+}
+
+.thought-one {
+  left: 3%;
+  top: 12%;
+
+  background: rgba(243, 217, 139, 0.55);
+
+  transform: rotate(-5deg);
+}
+
+.thought-two {
+  right: 3%;
+  top: 9%;
+
+  background: rgba(142, 167, 181, 0.25);
+
+  transform: rotate(4deg);
+}
+
+.thought-three {
+  left: 10%;
+  bottom: 10%;
+
+  background: rgba(216, 137, 114, 0.2);
+
+  transform: rotate(3deg);
+}
+
+.thought-four {
+  right: 11%;
+  bottom: 8%;
+
+  background: rgba(155, 168, 143, 0.3);
+
+  transform: rotate(-4deg);
+}
+
+@media (max-width: 760px) {
+  .hidden-thoughts {
+    padding: 110px 0 130px;
+  }
+
+  .thoughts-canvas {
+    height: auto;
+
+    margin-top: 55px;
+
+    padding: 30px 0;
+
+    border: none;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .canvas-center {
+    position: relative;
+
+    left: auto;
+    top: auto;
+
+    transform: none;
+
+    width: 150px;
+    height: 150px;
+
+    margin-bottom: 20px;
+  }
+
+  .thought-card {
+    position: relative;
+
+    left: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
+
+    width: min(100%, 330px);
+
+    transform: none;
+  }
+
+  .thought-one,
+  .thought-two,
+  .thought-three,
+  .thought-four {
+    transform: rotate(0deg);
+  }
+}

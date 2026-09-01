@@ -1,0 +1,323 @@
+.day-reflection {
+  min-height: 850px;
+
+  position: relative;
+  overflow: hidden;
+
+  padding: 150px max(24px, calc((100vw - 1180px) / 2));
+
+  background: #29251f;
+  color: #f4ebdd;
+}
+
+.day-reflection-glow {
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  border-radius: 50%;
+
+  background: rgba(108, 99, 168, 0.3);
+
+  filter: blur(100px);
+
+  top: 15%;
+  right: -10%;
+
+  pointer-events: none;
+}
+
+.reflection-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  position: relative;
+  z-index: 2;
+}
+
+.reflection-moon {
+  width: 34px;
+  height: 34px;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid rgba(244, 235, 221, 0.2);
+
+  border-radius: 50%;
+}
+
+.reflection-header .section-label {
+  opacity: 0.45;
+}
+
+.reflection-content {
+  margin-top: 100px;
+
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+
+  gap: 100px;
+
+  align-items: center;
+
+  position: relative;
+  z-index: 2;
+}
+
+.reflection-copy h2 {
+  font-family: var(--font-display);
+
+  font-size: clamp(4rem, 7vw, 7rem);
+
+  line-height: 0.9;
+
+  letter-spacing: -0.065em;
+
+  font-weight: 500;
+}
+
+.reflection-copy h2 em {
+  color: #aaa2e0;
+
+  font-style: italic;
+}
+
+.reflection-copy > p {
+  max-width: 420px;
+
+  margin-top: 30px;
+
+  font-size: 0.95rem;
+
+  line-height: 1.8;
+
+  opacity: 0.58;
+}
+
+.reflection-note {
+  display: block;
+
+  max-width: 300px;
+
+  margin-top: 45px;
+
+  font-family: var(--font-mono);
+
+  font-size: 0.62rem;
+
+  line-height: 1.7;
+
+  color: #f3d98b;
+
+  opacity: 0.8;
+}
+
+/* JOURNAL */
+
+.reflection-journal {
+  max-width: 580px;
+
+  justify-self: end;
+}
+
+.journal-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 12px;
+
+  font-family: var(--font-mono);
+
+  font-size: 0.55rem;
+
+  opacity: 0.4;
+}
+
+.journal-paper {
+  padding: 35px;
+
+  background: #f4ebdd;
+
+  color: #29251f;
+
+  position: relative;
+
+  transform: rotate(1deg);
+
+  box-shadow:
+    8px 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.journal-paper::before {
+  content: "";
+
+  position: absolute;
+
+  width: 90px;
+  height: 23px;
+
+  top: -12px;
+  left: 55%;
+
+  transform: translateX(-50%) rotate(-2deg);
+
+  background: rgba(243, 217, 139, 0.75);
+}
+
+.journal-prompt {
+  font-family: var(--font-mono);
+
+  font-size: 0.65rem;
+
+  opacity: 0.45;
+}
+
+.journal-paper p {
+  margin-top: 18px;
+
+  max-width: 470px;
+
+  font-family: var(--font-display);
+
+  font-size: 1.3rem;
+
+  line-height: 1.5;
+
+  letter-spacing: -0.02em;
+}
+
+.journal-button {
+  margin-top: 28px;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 12px 15px;
+
+  background: #655ca0;
+
+  color: #f4ebdd;
+
+  border-radius: 999px;
+
+  font-family: var(--font-mono);
+
+  font-size: 0.62rem;
+
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.journal-button:hover {
+  transform: translateY(-3px);
+
+  box-shadow: 4px 5px 0 rgba(101, 92, 160, 0.35);
+}
+
+/* RESULT */
+
+.journal-result {
+  width: 88%;
+
+  margin: -4px auto 0;
+
+  padding: 27px 30px;
+
+  background: rgba(142, 167, 181, 0.18);
+
+  border: 1px solid rgba(244, 235, 221, 0.12);
+
+  transform: rotate(-1deg);
+}
+
+.result-label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  font-family: var(--font-mono);
+
+  font-size: 0.55rem;
+
+  color: #aaa2e0;
+
+  letter-spacing: 0.08em;
+}
+
+.journal-result h3 {
+  margin-top: 14px;
+
+  font-family: var(--font-display);
+
+  font-size: 1.55rem;
+
+  font-weight: 500;
+
+  letter-spacing: -0.035em;
+}
+
+.journal-result p {
+  margin-top: 10px;
+
+  max-width: 470px;
+
+  font-size: 0.78rem;
+
+  line-height: 1.7;
+
+  opacity: 0.6;
+}
+
+.result-footer {
+  display: block;
+
+  margin-top: 20px;
+
+  font-family: var(--font-mono);
+
+  font-size: 0.5rem;
+
+  opacity: 0.3;
+}
+
+@media (max-width: 900px) {
+  .reflection-content {
+    grid-template-columns: 1fr;
+
+    gap: 70px;
+  }
+
+  .reflection-journal {
+    justify-self: stretch;
+  }
+}
+
+@media (max-width: 600px) {
+  .day-reflection {
+    padding: 100px 16px;
+  }
+
+  .reflection-content {
+    margin-top: 65px;
+  }
+
+  .journal-paper {
+    padding: 25px;
+
+    transform: rotate(0.5deg);
+  }
+
+  .journal-paper p {
+    font-size: 1.1rem;
+  }
+
+  .journal-result {
+    width: 94%;
+  }
+}
